@@ -1,0 +1,15 @@
+Aplicación: WhatsApp:
+Datos que maneja:
+Contactos
+Mensajes
+Grupos
+Cómo podrían organizarse: 
+Los contactos podrían organizarse en una lista o arreglo,, ya que se muestran de forma ordenada y se
+recorren fácilmente. También podrían apoyarse en una tabla hash para encontrar rápidamente un contacto
+por número o nombre.
+Los mensajes pueden organizarse en listas enlazadas o arreglos dinámicos, porque se agregan
+constantemente nuevos mensajes al final de la conversación. Además, podrían almacenarse en una
+estructura tipo cola para mantener el orden en que se envían y reciben.
+Los grupos podrían representarse mediante grafos, donde cada persona es un punto y las conexiones
+representan que pertenecen al mismo grupo. Esto facilita gestionar relaciones y notificaciones entre varios
+usuarios.
