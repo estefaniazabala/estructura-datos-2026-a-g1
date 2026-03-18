@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Hello and welcome to Java!");
+
+        // Construir scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // Definir el tamaño del vector
+        int count = 0;
+        if (count == 0) {
+            System.out.print("Enter the size of the vector: ");
+            count = scanner.nextInt();
+        }
+
+        // Vectores principales
+        Double[] vectorA = new Double[count];
+        Double[] vectorB = new Double[count];
+        Double[] vectorC = new Double[count];
+
+        // Vectores de resultados
+        Double[] suma = new Double[count];
+        Double[] resta = new Double[count];
+        Double[] multiplicacion = new Double[count];
+
+        int i;
+
+        // Llenar Vector A
+        for(i = 0; i < vectorA.length; i++){
+            vectorA[i] = (double) (i + 1);
+        }
+
+        // Llenar Vector B
+        for(i = 0; i < vectorB.length; i++){
+            vectorB[i] = vectorA[i] * 2;
+        }
+
+        // Llenar Vector C
+        for(i = 0; i < vectorC.length; i++){
+            vectorC[i] = vectorA[i] + vectorB[i];
+        }
+
+        // Operaciones
+        for(i = 0; i < count; i++){
+            suma[i] = vectorA[i] + vectorB[i];           // A + B
+            resta[i] = vectorB[i] - vectorC[i];          // B - C
+            multiplicacion[i] = vectorA[i] * vectorC[i]; // A * C
+        }
+
+        // Mostrar vectores originales
+        System.out.println("\n\nVector A: ");
+        for(i = 0; i < vectorA.length; i++){
+            System.out.print(vectorA[i].intValue() + " - ");
+        }
+
+        System.out.println("\n\nVector B: ");
+        for(i = 0; i < vectorB.length; i++){
+            System.out.print(vectorB[i].intValue() + " * ");
+        }
+
+        System.out.println("\n\nVector C: ");
+        for(i = 0; i < vectorC.length; i++){
+            System.out.print(vectorC[i].intValue() + " | ");
+        }
+
+        // Mostrar resultados
+        System.out.println("\n\nSuma (A + B): ");
+        for(i = 0; i < count; i++){
+            System.out.print(suma[i].intValue() + " ");
+        }
+
+        System.out.println("\n\nResta (B - C): ");
+        for(i = 0; i < count; i++){
+            System.out.print(resta[i].intValue() + " ");
+        }
+
+        System.out.println("\n\nMultiplicación (A * C): ");
+        for(i = 0; i < count; i++){
+            System.out.print(multiplicacion[i].intValue() + " ");
+        }
+    }
+}
