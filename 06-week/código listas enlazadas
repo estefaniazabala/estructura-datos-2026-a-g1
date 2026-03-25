@@ -1,0 +1,38 @@
+class Nodo {
+    String dato;
+    Nodo siguiente;
+
+    // Constructor
+    public Nodo(String dato) {
+        this.dato = dato;
+        this.siguiente = null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Crear nodos (estudiantes)
+        Nodo nodo1 = new Nodo("Ana");
+        Nodo nodo2 = new Nodo("Luis");
+        Nodo nodo3 = new Nodo("Carlos");
+        Nodo nodo4 = new Nodo("María");
+
+        // Enlazar nodos
+        nodo1.siguiente = nodo2;
+        nodo2.siguiente = nodo3;
+        nodo3.siguiente = nodo4;
+        nodo4.siguiente = null; // último nodo
+
+        // Definir la cabeza
+        Nodo cabeza = nodo1;
+
+        // Recorrer la lista
+        Nodo actual = cabeza;
+        while (actual != null) {
+            System.out.print(actual.dato + " → ");
+            actual = actual.siguiente;
+        }
+        System.out.println("null");
+    }
+}
