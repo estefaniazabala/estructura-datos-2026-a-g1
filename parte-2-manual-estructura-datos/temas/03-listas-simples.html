@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 · Listas enlazadas simples</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <span class="logo">📚</span>
+
+    <div class="brand">
+      <h1>Listas enlazadas simples</h1>
+      <p>Tema 03</p>
+    </div>
+
+  </header>
+
+  <div class="topic-layout">
+
+    <aside class="sidebar">
+
+      <a class="back-link" href="../index.html">
+        ← Inicio
+      </a>
+
+      <h2>Secciones</h2>
+
+      <nav>
+        <a href="#doc" data-section="doc">Documentación</a>
+        <a href="#ejemplos" data-section="ejemplos">Ejemplos</a>
+        <a href="#retos" data-section="retos">Retos</a>
+        <a href="#video" data-section="video">Clip</a>
+      </nav>
+
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+
+      <a href="02-arrays.html">
+        ← Anterior
+      </a>
+
+      <br><br>
+
+      <a href="04-listas-dobles-circulares.html">
+        Siguiente →
+      </a>
+
+    </aside>
+
+    <main>
+
+      <div class="section-tabs">
+
+        <button type="button" data-panel="doc">
+          Documentación
+        </button>
+
+        <button type="button" data-panel="ejemplos">
+          Ejemplos
+        </button>
+
+        <button type="button" data-panel="retos">
+          Retos
+        </button>
+
+        <button type="button" data-panel="video">
+          Clip
+        </button>
+
+      </div>
+
+      <section id="doc" class="panel card">
+
+        <h3>Definición</h3>
+
+        <p>
+          Lista enlazada simple: colección de nodos
+          conectados mediante referencias.
+        </p>
+
+        <h3>Utilidad</h3>
+
+        <p>
+          Permite inserciones y eliminaciones dinámicas.
+        </p>
+
+        <h3>Características</h3>
+
+        <ul>
+          <li>Recorrido secuencial</li>
+          <li>Memoria no contigua</li>
+          <li>Uso de punteros</li>
+        </ul>
+
+        <h3>Representación</h3>
+
+        <pre>
+class Nodo {
+  int dato;
+  Nodo next;
+}
+        </pre>
+
+        <h3>Casos de uso</h3>
+
+        <ul>
+          <li>Listas de tareas</li>
+          <li>Reproducción musical</li>
+        </ul>
+
+      </section>
+
+      <section id="ejemplos" class="panel card">
+
+        <h3>Ejemplo 1: Insertar al inicio</h3>
+
+        <ol>
+          <li>Crear nuevo nodo</li>
+          <li>Conectarlo al head</li>
+          <li>Actualizar head</li>
+        </ol>
+
+        <h3>Ejemplo 2: Eliminar nodo</h3>
+
+        <ol>
+          <li>Buscar nodo</li>
+          <li>Actualizar referencias</li>
+          <li>Eliminar conexión</li>
+        </ol>
+
+      </section>
+
+      <section id="retos" class="panel card">
+
+        <div class="challenge">
+
+          <h3>Reto 1</h3>
+
+          <p>
+            Invertir una lista enlazada sin crear otra.
+          </p>
+
+          <p class="hint">
+            Pista: usa anterior, actual y siguiente.
+          </p>
+
+        </div>
+
+        <div class="challenge">
+
+          <h3>Reto 2</h3>
+
+          <p>
+            Detectar ciclos en una lista enlazada.
+          </p>
+
+          <p class="hint">
+            Pista: algoritmo de Floyd.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section id="video" class="panel card">
+
+        <h3>Clip explicativo</h3>
+
+        <div class="video-wrap">
+
+          <video controls src="../assets/videos/03-listas.mp4">
+          </video>
+
+        </div>
+
+      </section>
+
+      <nav class="topic-nav-bottom">
+
+        <a href="02-arrays.html">
+          ← Anterior
+        </a>
+
+        <a href="04-listas-dobles-circulares.html">
+          Siguiente →
+        </a>
+
+      </nav>
+
+    </main>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

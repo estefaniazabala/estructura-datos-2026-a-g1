@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 · Pilas (Stack)</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <span class="logo">📚</span>
+    <div class="brand">
+      <h1>Pilas — Stack</h1>
+      <p>Tema 05</p>
+    </div>
+  </header>
+
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <a class="back-link" href="../index.html">← Inicio</a>
+      <h2>Secciones</h2>
+      <nav>
+        <a href="#doc" data-section="doc">Documentación</a>
+        <a href="#ejemplos" data-section="ejemplos">Ejemplos</a>
+        <a href="#retos" data-section="retos">Retos</a>
+        <a href="#video" data-section="video">Clip explicativo</a>
+      </nav>
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+      <a href="04-listas-dobles-circulares.html">← Anterior</a><br><br>
+      <a href="06-colas.html">Siguiente →</a>
+    </aside>
+
+    <main>
+      <div class="section-tabs">
+        <button type="button" data-panel="doc">Documentación</button>
+        <button type="button" data-panel="ejemplos">Ejemplos</button>
+        <button type="button" data-panel="retos">Retos</button>
+        <button type="button" data-panel="video">Clip</button>
+      </div>
+
+      <section id="doc" class="panel card">
+        <h3>Definición</h3>
+        <p>
+          Una <strong>pila (Stack)</strong> es una estructura lineal LIFO
+          (<em>Last In, First Out</em>): el último elemento que entra es el primero que sale.
+        </p>
+        <h3>Utilidad</h3>
+        <p>
+          Modela situaciones donde solo importa el elemento más reciente: deshacer acciones,
+          validar sintaxis, llamadas recursivas y recorridos en profundidad.
+        </p>
+        <h3>Características</h3>
+        <ul>
+          <li>Operaciones: <code>push</code> (apilar), <code>pop</code> (desapilar), <code>peek/top</code> (ver tope)</li>
+          <li>Acceso únicamente al tope en O(1)</li>
+          <li>Implementación con array o lista enlazada</li>
+        </ul>
+        <h3>Representación</h3>
+        <pre>push(5) → [5]
+push(3) → [5, 3]   // 3 es el tope
+pop()   → devuelve 3, queda [5]</pre>
+        <h3>Casos de uso</h3>
+        <ul>
+          <li>Historial "Deshacer" en editores</li>
+          <li>Validación de paréntesis y expresiones</li>
+          <li>DFS iterativo en grafos y árboles</li>
+          <li>Pila de llamadas del programa</li>
+        </ul>
+      </section>
+
+      <section id="ejemplos" class="panel card">
+        <h3>Ejemplo 1: Validar paréntesis balanceados</h3>
+        <ol>
+          <li>Expresión: <code>"({[]})"</code></li>
+          <li>Leer <code>'('</code> → push <code>'('</code></li>
+          <li>Leer <code>'{'</code> → push; leer <code>'['</code> → push</li>
+          <li>Leer <code>']'</code> → pop debe ser <code>'['</code> ✓</li>
+          <li>Leer <code>'}'</code> → pop debe ser <code>'{'</code> ✓</li>
+          <li>Leer <code>')'</code> → pop debe ser <code>'('</code> ✓</li>
+          <li>Pila vacía al final → <strong>expresión válida</strong></li>
+        </ol>
+
+        <h3>Ejemplo 2: Convertir decimal a binario</h3>
+        <ol>
+          <li>n = 13</li>
+          <li>13 % 2 = 1 → push 1; n = 6</li>
+          <li>6 % 2 = 0 → push 0; n = 3</li>
+          <li>3 % 2 = 1 → push 1; n = 1</li>
+          <li>1 % 2 = 1 → push 1; n = 0 (fin)</li>
+          <li>Pop en orden de salida: <strong>1101₂</strong></li>
+        </ol>
+      </section>
+
+      <section id="retos" class="panel card">
+        <div class="challenge">
+          <h3>Reto 1</h3>
+          <p>
+            Evalúa la expresión en notación postfija: <code>3 4 + 2 *</code>.
+            Describe paso a paso el estado de la pila. <em>No publiques solo el número final en la página.</em>
+          </p>
+          <p class="hint"><strong>Pista:</strong> Número → push; operador → pop dos operandos, calcular, push resultado.</p>
+        </div>
+        <div class="challenge">
+          <h3>Reto 2</h3>
+          <p>
+            Diseña una pila que permita obtener el elemento mínimo en O(1).
+            Explica la idea general. <em>Sin código completo.</em>
+          </p>
+          <p class="hint"><strong>Pista:</strong> Mantén una pila auxiliar con los mínimos históricos en cada push.</p>
+        </div>
+      </section>
+
+      <section id="video" class="panel card">
+        <h3>Clip explicativo del equipo</h3>
+        <div class="video-wrap">
+          <video controls src="../assets/videos/05-pilas.mp4"></video>
+        </div>
+      </section>
+
+      <nav class="topic-nav-bottom">
+        <a href="04-listas-dobles-circulares.html">← Anterior</a>
+        <a href="06-colas.html">Siguiente →</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

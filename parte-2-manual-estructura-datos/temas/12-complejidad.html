@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 · Complejidad algorítmica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <span class="logo">📚</span>
+    <div class="brand">
+      <h1>Complejidad algorítmica</h1>
+      <p>Tema 12</p>
+    </div>
+  </header>
+
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <a class="back-link" href="../index.html">← Inicio</a>
+
+      <h2>Secciones</h2>
+
+      <nav>
+        <a href="#doc" data-section="doc">Documentación</a>
+        <a href="#ejemplos" data-section="ejemplos">Ejemplos</a>
+        <a href="#retos" data-section="retos">Retos</a>
+        <a href="#video" data-section="video">Clip explicativo</a>
+      </nav>
+
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+
+      <a href="11-grafos.html">← Anterior</a>
+    </aside>
+
+    <main>
+      <div class="section-tabs">
+        <button type="button" data-panel="doc">Documentación</button>
+        <button type="button" data-panel="ejemplos">Ejemplos</button>
+        <button type="button" data-panel="retos">Retos</button>
+        <button type="button" data-panel="video">Clip</button>
+      </div>
+
+      <section id="doc" class="panel card">
+        <h3>Definición</h3>
+        <p>
+          La <strong>complejidad algorítmica</strong> describe cómo crecen el tiempo o la memoria
+          que usa un algoritmo cuando aumenta el tamaño de la entrada n.
+        </p>
+
+        <h3>Utilidad</h3>
+        <p>
+          Comparar algoritmos y estructuras de datos de forma independiente del hardware;
+          predecir rendimiento con entradas grandes.
+        </p>
+
+        <h3>Características</h3>
+        <ul>
+          <li><strong>O (O grande):</strong> cota superior (peor caso habitual)</li>
+          <li><strong>Ω:</strong> cota inferior</li>
+          <li><strong>Θ:</strong> cota ajustada (mismo orden superior e inferior)</li>
+          <li>Se analiza tiempo y espacio auxiliar</li>
+        </ul>
+
+        <h3>Representación</h3>
+        <pre>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2^n)</pre>
+
+        <h3>Casos de uso</h3>
+        <ul>
+          <li>Elegir entre array, lista, hash o árbol según operaciones</li>
+          <li>Justificar optimizaciones en proyectos y exámenes</li>
+          <li>Entrevistas técnicas y diseño de sistemas</li>
+        </ul>
+      </section>
+
+      <section id="ejemplos" class="panel card">
+        <h3>Ejemplo 1: Bucle anidado</h3>
+
+        <ol>
+          <li>Código: <code>for(i=0; i&lt;n; i++) for(j=0; j&lt;n; j++)</code> trabajo constante</li>
+          <li>El bucle interno corre n veces por cada i</li>
+          <li>Total de iteraciones: n × n = n²</li>
+          <li><strong>Complejidad temporal:</strong> O(n²)</li>
+        </ol>
+
+        <h3>Ejemplo 2: Merge Sort</h3>
+
+        <ol>
+          <li>Dividir el arreglo por mitades → log n niveles de división</li>
+          <li>En cada nivel, combinar todos los elementos: O(n) por nivel</li>
+          <li>n niveles × trabajo O(n) en cada uno → O(n log n)</li>
+          <li>Espacio auxiliar del merge: O(n)</li>
+          <li><strong>Resultado:</strong> tiempo O(n log n), espacio O(n)</li>
+        </ol>
+      </section>
+
+      <section id="retos" class="panel card">
+        <div class="challenge">
+          <h3>Reto 1</h3>
+
+          <p>
+            ¿Cuál es la complejidad de <strong>buscar</strong> un valor en un BST que se degeneró
+            en una lista enlazada (inserción ordenada 1,2,3,...,n)? Justifica.
+            <em>Sin código.</em>
+          </p>
+
+          <p class="hint">
+            <strong>Pista:</strong> La altura del árbol es n; en el peor caso recorres todos los nodos.
+          </p>
+        </div>
+
+        <div class="challenge">
+          <h3>Reto 2</h3>
+
+          <p>
+            Compara el caso <strong>promedio</strong> y el <strong>peor caso</strong> de una tabla hash
+            bien diseñada vs mal diseñada. <em>Respuesta conceptual.</em>
+          </p>
+
+          <p class="hint">
+            <strong>Pista:</strong> Promedio O(1) con pocas colisiones; peor O(n) si todas las claves colisionan.
+          </p>
+        </div>
+      </section>
+
+      <section id="video" class="panel card">
+        <h3>Clip explicativo del equipo</h3>
+
+        <div class="video-wrap">
+          <video controls src="../assets/videos/12-complejidad.mp4"></video>
+        </div>
+      </section>
+
+      <nav class="topic-nav-bottom">
+        <a href="11-grafos.html">← Anterior</a>
+        <span></span>
+      </nav>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

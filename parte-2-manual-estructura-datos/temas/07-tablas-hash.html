@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>07 · Tablas Hash</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <span class="logo">📚</span>
+
+    <div class="brand">
+      <h1>Tablas Hash</h1>
+      <p>Tema 07</p>
+    </div>
+
+  </header>
+
+  <div class="topic-layout">
+
+    <aside class="sidebar">
+
+      <a class="back-link" href="../index.html">
+        ← Inicio
+      </a>
+
+      <h2>Secciones</h2>
+
+      <nav>
+
+        <a href="#doc" data-section="doc">
+          Documentación
+        </a>
+
+        <a href="#ejemplos" data-section="ejemplos">
+          Ejemplos
+        </a>
+
+        <a href="#retos" data-section="retos">
+          Retos
+        </a>
+
+        <a href="#video" data-section="video">
+          Clip explicativo
+        </a>
+
+      </nav>
+
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+
+      <a href="06-colas.html">
+        ← Anterior
+      </a>
+
+      <br><br>
+
+      <a href="08-arboles-binarios.html">
+        Siguiente →
+      </a>
+
+    </aside>
+
+    <main>
+
+      <div class="section-tabs">
+
+        <button type="button" data-panel="doc">
+          Documentación
+        </button>
+
+        <button type="button" data-panel="ejemplos">
+          Ejemplos
+        </button>
+
+        <button type="button" data-panel="retos">
+          Retos
+        </button>
+
+        <button type="button" data-panel="video">
+          Clip
+        </button>
+
+      </div>
+
+      <section id="doc" class="panel card">
+
+        <h3>Definición</h3>
+
+        <p>
+          Una <strong>tabla hash</strong> almacena datos
+          usando una función hash para convertir claves
+          en posiciones dentro de un arreglo.
+        </p>
+
+        <h3>Utilidad</h3>
+
+        <p>
+          Permite búsquedas e inserciones rápidas
+          en promedio O(1).
+        </p>
+
+        <h3>Características</h3>
+
+        <ul>
+
+          <li>Usa pares clave-valor</li>
+
+          <li>Puede haber colisiones</li>
+
+          <li>Se usan buckets o sondeo</li>
+
+          <li>El factor de carga afecta el rendimiento</li>
+
+        </ul>
+
+        <h3>Representación</h3>
+
+        <pre>
+indice = hash(clave) % tamaño
+
+tabla[indice] = valor
+        </pre>
+
+        <h3>Casos de uso</h3>
+
+        <ul>
+
+          <li>Diccionarios</li>
+
+          <li>HashMap</li>
+
+          <li>Cachés</li>
+
+          <li>Bases de datos</li>
+
+        </ul>
+
+      </section>
+
+      <section id="ejemplos" class="panel card">
+
+        <h3>Ejemplo 1: Función hash</h3>
+
+        <ol>
+
+          <li>hash(k) = k mod 7</li>
+
+          <li>14 → índice 0</li>
+
+          <li>21 → índice 0 (colisión)</li>
+
+          <li>8 → índice 1</li>
+
+        </ol>
+
+        <h3>Ejemplo 2: Sondeo lineal</h3>
+
+        <ol>
+
+          <li>12 → posición 2</li>
+
+          <li>17 → posición 2 ocupada</li>
+
+          <li>Buscar siguiente libre</li>
+
+        </ol>
+
+      </section>
+
+      <section id="retos" class="panel card">
+
+        <div class="challenge">
+
+          <h3>Reto 1</h3>
+
+          <p>
+            Explica por qué una mala función hash
+            degrada el rendimiento a O(n).
+          </p>
+
+          <p class="hint">
+            Pista: demasiadas colisiones.
+          </p>
+
+        </div>
+
+        <div class="challenge">
+
+          <h3>Reto 2</h3>
+
+          <p>
+            Explica cómo resolver el problema
+            two sum usando tabla hash.
+          </p>
+
+          <p class="hint">
+            Pista: guardar complementos.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section id="video" class="panel card">
+
+        <h3>Clip explicativo del equipo</h3>
+
+        <div class="video-wrap">
+
+          <video controls src="../assets/videos/07-hash.mp4">
+          </video>
+
+        </div>
+
+      </section>
+
+      <nav class="topic-nav-bottom">
+
+        <a href="06-colas.html">
+          ← Anterior
+        </a>
+
+        <a href="08-arboles-binarios.html">
+          Siguiente →
+        </a>
+
+      </nav>
+
+    </main>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

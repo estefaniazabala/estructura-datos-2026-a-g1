@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>06 · Colas (Queue)</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <span class="logo">📚</span>
+
+    <div class="brand">
+      <h1>Colas — Queue y variantes</h1>
+      <p>Tema 06</p>
+    </div>
+
+  </header>
+
+  <div class="topic-layout">
+
+    <aside class="sidebar">
+
+      <a class="back-link" href="../index.html">
+        ← Inicio
+      </a>
+
+      <h2>Secciones</h2>
+
+      <nav>
+        <a href="#doc" data-section="doc">Documentación</a>
+
+        <a href="#ejemplos" data-section="ejemplos">
+          Ejemplos
+        </a>
+
+        <a href="#retos" data-section="retos">
+          Retos
+        </a>
+
+        <a href="#video" data-section="video">
+          Clip explicativo
+        </a>
+      </nav>
+
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+
+      <a href="05-pilas.html">
+        ← Anterior
+      </a>
+
+      <br><br>
+
+      <a href="07-tablas-hash.html">
+        Siguiente →
+      </a>
+
+    </aside>
+
+    <main>
+
+      <div class="section-tabs">
+
+        <button type="button" data-panel="doc">
+          Documentación
+        </button>
+
+        <button type="button" data-panel="ejemplos">
+          Ejemplos
+        </button>
+
+        <button type="button" data-panel="retos">
+          Retos
+        </button>
+
+        <button type="button" data-panel="video">
+          Clip
+        </button>
+
+      </div>
+
+      <section id="doc" class="panel card">
+
+        <h3>Definición</h3>
+
+        <p>
+          Una <strong>cola (Queue)</strong> es una estructura FIFO
+          (<em>First In, First Out</em>):
+          el primero en entrar es el primero en salir.
+        </p>
+
+        <h3>Utilidad</h3>
+
+        <p>
+          Modela procesos en orden de llegada:
+          impresión, atención al cliente,
+          planificación de tareas y BFS.
+        </p>
+
+        <h3>Características</h3>
+
+        <ul>
+          <li><code>enqueue</code> inserta al final</li>
+
+          <li><code>dequeue</code> elimina del frente</li>
+
+          <li>La cola circular reutiliza espacios</li>
+
+          <li>Deque trabaja en ambos extremos</li>
+
+          <li>La cola de prioridad atiende por importancia</li>
+        </ul>
+
+        <h3>Representación</h3>
+
+        <pre>
+enqueue(A), enqueue(B), enqueue(C)
+
+cola:
+frente → A, B, C ← final
+
+dequeue() → A
+        </pre>
+
+        <h3>Casos de uso</h3>
+
+        <ul>
+          <li>Colas de impresión</li>
+
+          <li>BFS en grafos</li>
+
+          <li>Buffers</li>
+
+          <li>Hospitales y urgencias</li>
+        </ul>
+
+      </section>
+
+      <section id="ejemplos" class="panel card">
+
+        <h3>Ejemplo 1: Atención de clientes</h3>
+
+        <ol>
+          <li>Llegan A, B y C</li>
+
+          <li>Se encolan en ese orden</li>
+
+          <li>Sale primero A</li>
+
+          <li>Luego sale B</li>
+
+          <li>Finalmente sale C</li>
+        </ol>
+
+        <h3>Ejemplo 2: Cola circular</h3>
+
+        <ol>
+          <li>Array tamaño 4</li>
+
+          <li>rear y front avanzan con módulo</li>
+
+          <li>Los espacios liberados se reutilizan</li>
+        </ol>
+
+      </section>
+
+      <section id="retos" class="panel card">
+
+        <div class="challenge">
+
+          <h3>Reto 1</h3>
+
+          <p>
+            Explica cómo implementar una cola
+            usando dos pilas.
+          </p>
+
+          <p class="hint">
+            Pista: una pila recibe elementos
+            y la otra los entrega.
+          </p>
+
+        </div>
+
+        <div class="challenge">
+
+          <h3>Reto 2</h3>
+
+          <p>
+            Explica cómo funcionaría
+            una cola de prioridad en un hospital.
+          </p>
+
+          <p class="hint">
+            Pista: urgencias graves primero.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section id="video" class="panel card">
+
+        <h3>Clip explicativo del equipo</h3>
+
+        <div class="video-wrap">
+
+          <video controls src="../assets/videos/06-colas.mp4">
+          </video>
+
+        </div>
+
+      </section>
+
+      <nav class="topic-nav-bottom">
+
+        <a href="05-pilas.html">
+          ← Anterior
+        </a>
+
+        <a href="07-tablas-hash.html">
+          Siguiente →
+        </a>
+
+      </nav>
+
+    </main>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

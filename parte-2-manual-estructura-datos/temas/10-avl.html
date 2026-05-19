@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 · Árboles AVL</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <span class="logo">📚</span>
+    <div class="brand">
+      <h1>Árboles balanceados — AVL</h1>
+      <p>Tema 10</p>
+    </div>
+  </header>
+
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <a class="back-link" href="../index.html">← Inicio</a>
+      <h2>Secciones</h2>
+      <nav>
+        <a href="#doc" data-section="doc">Documentación</a>
+        <a href="#ejemplos" data-section="ejemplos">Ejemplos</a>
+        <a href="#retos" data-section="retos">Retos</a>
+        <a href="#video" data-section="video">Clip explicativo</a>
+      </nav>
+      <hr style="margin:1rem 0;border-color:#2d3a4f">
+      <a href="09-bst.html">← Anterior</a><br><br>
+      <a href="11-grafos.html">Siguiente →</a>
+    </aside>
+
+    <main>
+      <div class="section-tabs">
+        <button type="button" data-panel="doc">Documentación</button>
+        <button type="button" data-panel="ejemplos">Ejemplos</button>
+        <button type="button" data-panel="retos">Retos</button>
+        <button type="button" data-panel="video">Clip</button>
+      </div>
+
+      <section id="doc" class="panel card">
+        <h3>Definición</h3>
+        <p>
+          Un <strong>árbol AVL</strong> es un BST donde, en cada nodo, la diferencia de alturas entre
+          subárbolos izquierdo y derecho (factor de balance) es -1, 0 o 1.
+        </p>
+        <h3>Utilidad</h3>
+        <p>
+          Garantiza altura O(log n), por lo que búsqueda, inserción y eliminación son O(log n)
+          incluso en el peor caso (a diferencia de un BST simple degenerado).
+        </p>
+        <h3>Características</h3>
+        <ul>
+          <li>Tras insertar/eliminar, se rebalancea con rotaciones</li>
+          <li>Rotaciones simples: LL, RR</li>
+          <li>Rotaciones dobles: LR, RL</li>
+          <li>Más estricto que Red-Black; puede requerir más rotaciones</li>
+        </ul>
+        <h3>Representación</h3>
+        <pre>class NodoAVL {
+  int dato;
+  NodoAVL izq, der;
+  int altura; // o factor de balance
+}</pre>
+        <h3>Casos de uso</h3>
+        <ul>
+          <li>Bases de datos en memoria que exigen peor caso logarítmico</li>
+          <li>Diccionarios con muchas inserciones/eliminaciones</li>
+          <li>Cuando el balance estricto es prioritario</li>
+        </ul>
+      </section>
+
+      <section id="ejemplos" class="panel card">
+        <h3>Ejemplo 1: Rotación simple derecha (RR)</h3>
+        <ol>
+          <li>Insertar 10, luego 20, luego 30 en BST vacío → cadena derecha (desbalance)</li>
+          <li>Factor de balance en 10 es -2 (muy pesado a la derecha)</li>
+          <li>Rotación izquierda en 10: 20 sube como raíz, 10 queda izquierdo, 30 derecho</li>
+          <li><strong>Resultado:</strong> árbol balanceado con raíz 20</li>
+        </ol>
+
+        <h3>Ejemplo 2: Rotación doble izquierda-derecha (LR)</h3>
+        <ol>
+          <li>Insertar 30, luego 10, luego 20 → raíz 30, izq 10, der de 10 es 20</li>
+          <li>Desbalance en 30 (factor +2); hijo izquierdo 10 tiene hijo derecho pesado</li>
+          <li>Primero rotar izquierda en 10 (20 sube); luego rotar derecha en 30</li>
+          <li><strong>Resultado:</strong> raíz 20, hijos 10 y 30</li>
+        </ol>
+      </section>
+
+      <section id="retos" class="panel card">
+        <div class="challenge">
+          <h3>Reto 1</h3>
+          <p>
+            Explica por qué un AVL garantiza altura O(log n) y, por tanto, operaciones en O(log n).
+            <em>Argumento conceptual, sin demostración formal completa.</em>
+          </p>
+          <p class="hint"><strong>Pista:</strong> El factor de balance limita cuán “alto” puede crecer un subárbol respecto al otro.</p>
+        </div>
+        <div class="challenge">
+          <h3>Reto 2</h3>
+          <p>
+            Compara AVL y Red-Black en tres aspectos: balance, cantidad de rotaciones y casos de uso típicos.
+            <em>Respuesta corta en prosa.</em>
+          </p>
+          <p class="hint"><strong>Pista:</strong> AVL más estricto; Red-Black más flexible en inserciones frecuentes.</p>
+        </div>
+      </section>
+
+      <section id="video" class="panel card">
+        <h3>Clip explicativo del equipo</h3>
+        <div class="video-wrap">
+          <video controls src="../assets/videos/10-avl.mp4"></video>
+        </div>
+      </section>
+
+      <nav class="topic-nav-bottom">
+        <a href="09-bst.html">← Anterior</a>
+        <a href="11-grafos.html">Siguiente →</a>
+      </nav>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
